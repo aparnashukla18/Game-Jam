@@ -4,43 +4,51 @@ using System.Collections;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueText;
-    public float typingSpeed = 0.2f;
+    public TextMeshProUGUI dialogue1;
+    public TextMeshProUGUI dialogue2;
+    public float typingSpeed = 0.05f;
+    public float dialogueSpeed = 2f;
+    public float dialogueDelay = 3f;
+    private int dialougeIndex = 0;
+    public playermovement playermovement;
 
-    public string[] dialogueSentences;
-    private string fullText;
-    private int currentSentenceIndex = 0;
-
-    private Coroutine typingCoroutine;
-    private bool isTyping = false;
     void Start()
     {
-        dialogueText.gameObject.SetActive(false);
-        fullText = dialogueSentences[currentSentenceIndex];
-        dialogueText.text = "";
+       dialogue1.gameObject.SetActive(false);
+       dialogue2.gameObject.SetActive(false);
 
-        typingCoroutine = StartCoroutine(TypeText());
+        StartCoroutine(StartDialogueAfterDelay());
     }
-    IEnumerator TypeText()
+   
+    IEnumerator StartDialogueAfterDelay()
     {
-        isTyping = true;
-       for (int i = 0; i < fullText.Length; i++)
-        {
-            dialogueText.text += fullText[i];
-            yield return new WaitForSeconds(typingSpeed);
-        }
-        isTyping = false;
-        typingCoroutine = null;
-    }
+        yield return new WaitForSeconds(dialogueDelay);
+        playermovement.enabled = false;
+        dialogue1.gameObject.SetActive(true);
+        dialougeIndex = 1;
 
-    void completeCurrentSentence()
+        
+    }
+    void Update()
     {
-        if (typingCoroutine != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            StopCoroutine(typingCoroutine);
-            typingCoroutine = null;
+            if (dialougeIndex == 1)
+            {
+                dialogue1.gameObject.SetActive(false);
+                dialogue2.gameObject.SetActive(true);
+
+                dialougeIndex = 2;
+            }
+            else if (dialougeIndex == 2)
+            {
+                StopAllCoroutines();
+                dialogue2.gameObject.SetActive(false);
+                dialougeIndex = 3;
+                playermovement.enabled = true;
+            }
         }
-        //dialogueText.text = sentences[currentSentenceIndex];
+
     }
 
 }
