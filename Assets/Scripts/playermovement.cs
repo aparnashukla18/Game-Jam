@@ -9,6 +9,7 @@ public class playermovement : MonoBehaviour
 
     private Vector2 targetposition;
     private bool ismoving;
+    private bool canMove = true;
     private Rigidbody rb;
     public SpriteRenderer spriteRenderer;   
     private void Start()
@@ -30,6 +31,12 @@ public class playermovement : MonoBehaviour
 
     void Update()
     {
+        if(!canMove)
+        {
+            ismoving = false;
+            UpdateAnimation();
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,7 +54,8 @@ public class playermovement : MonoBehaviour
         {
             transform.position = new Vector3(targetposition.x, transform.position.y, transform.position.z);
             ismoving = false;
-            SetIdle();
+            UpdateAnimation();
+            
         }
         if(ismoving == true)
         {
@@ -68,8 +76,24 @@ public class playermovement : MonoBehaviour
         }
 
     }
-    void SetIdle()
+    public void UpdateAnimation()
     {
-        animator.SetFloat("Speed", 0f);
+        if(animator != null)
+        {
+            animator.SetFloat("Speed", ismoving && canMove ? 1f : 0f);
+        }
     }
+    public void StopMovement()
+    {
+        canMove = false;
+        ismoving = false;
+        UpdateAnimation();
+    }
+    public void ResumeMovement()
+    {
+        canMove = true;
+        UpdateAnimation();
+    }
+
+
 }

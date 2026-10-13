@@ -34,7 +34,7 @@ public class door : MonoBehaviour
         if (other.CompareTag("Player") && dialougeIndex==0)
         {
             dialogueCoroutine = StartCoroutine(StartDialogueAfterDelay());
-            playermovement.enabled = false;
+            playermovement.StopMovement();
         }
     }
     IEnumerator StartDialogueAfterDelay()
@@ -42,7 +42,7 @@ public class door : MonoBehaviour
         yield return new WaitForSeconds(dialogueDelay);
         dialogue3.gameObject.SetActive(true);
         dialougeIndex = 1;
-        playermovement.enabled = false;
+        playermovement.StopMovement();
 
         dialogueCoroutine = null;
     }
@@ -83,7 +83,7 @@ public class door : MonoBehaviour
             {
                 sonDialogue.gameObject.SetActive(false);
                 dialougeIndex = 6;
-                playermovement.enabled = true;
+                playermovement.ResumeMovement();
             }
         }
     }
