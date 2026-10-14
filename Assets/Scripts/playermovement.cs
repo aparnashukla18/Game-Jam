@@ -67,11 +67,11 @@ public class playermovement : MonoBehaviour
         {
             if (targetposition .x < transform.position.x)
             {
-                transform.localScale = new Vector3(-3, 3, 3);
+                transform.localScale = new Vector3(-1.5f, 1.5f,1.5f);
             }
             else if ( targetposition.x > transform.position.x)
             {
-                transform.localScale = new Vector3(3, 3, 3);
+                transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
         }
 
