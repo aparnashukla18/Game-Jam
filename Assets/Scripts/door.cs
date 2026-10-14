@@ -4,6 +4,7 @@ using TMPro;
 
 public class door : MonoBehaviour
 {
+    public TextMeshProUGUI doorInteraction;
     public TextMeshProUGUI dialogue3;
     public TextMeshProUGUI dialogue4;
     public TextMeshProUGUI mumDialogue;
@@ -23,6 +24,7 @@ public class door : MonoBehaviour
     }
     void HideAllDialogue()
     {
+        doorInteraction.gameObject.SetActive(false);
         dialogue3.gameObject.SetActive(false);
         dialogue4.gameObject.SetActive(false);
         mumDialogue.gameObject.SetActive(false);
@@ -40,7 +42,7 @@ public class door : MonoBehaviour
     IEnumerator StartDialogueAfterDelay()
     {
         yield return new WaitForSeconds(dialogueDelay);
-        dialogue3.gameObject.SetActive(true);
+        doorInteraction.gameObject.SetActive(true);
         dialougeIndex = 1;
         playermovement.StopMovement();
 
@@ -52,37 +54,43 @@ public class door : MonoBehaviour
         {
             if (dialougeIndex == 1)
             {
-                dialogue3.gameObject.SetActive(false);
-                dialogue4.gameObject.SetActive(true);
+                doorInteraction.gameObject.SetActive(false);
+                dialogue3.gameObject.SetActive(true);
                 dialougeIndex = 2;
                 
             }
             else if (dialougeIndex == 2)
             {
-                dialogue4.gameObject.SetActive(false);
-                mumDialogue.gameObject.SetActive(true);
+                dialogue3.gameObject.SetActive(false);
+                dialogue4.gameObject.SetActive(true);
                 dialougeIndex = 3;
-                
+
             }
             else if (dialougeIndex == 3) //&&  !mumDialogueShown)
+            {
+                dialogue4.gameObject.SetActive(false);
+                mumDialogue.gameObject.SetActive(true);
+                dialougeIndex = 4;
+
+            }
+            else if (dialougeIndex == 4) //&& mumDialogueShown)
             {
                 mumDialogue.gameObject.SetActive(false);
                 mumDialogue1.gameObject.SetActive(true);
                 mumDialogueShown = true;
-                dialougeIndex = 4;
-                
-            }
-            else if (dialougeIndex == 4) //&& mumDialogueShown)
-            {
-                mumDialogue1.gameObject.SetActive(false);
-                sonDialogue.gameObject.SetActive(true);
                 dialougeIndex = 5;
-               
+
             }
             else if (dialougeIndex == 5)
             {
-                sonDialogue.gameObject.SetActive(false);
+                mumDialogue1.gameObject.SetActive(false);
+                sonDialogue.gameObject.SetActive(true);
                 dialougeIndex = 6;
+            }
+            else if(dialougeIndex == 6)
+            {
+                sonDialogue.gameObject.SetActive(false);
+                dialougeIndex = 7;
                 playermovement.ResumeMovement();
             }
         }
