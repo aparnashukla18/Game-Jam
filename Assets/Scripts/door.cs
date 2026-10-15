@@ -10,6 +10,7 @@ public class door : MonoBehaviour
     public TextMeshProUGUI mumDialogue;
     public TextMeshProUGUI mumDialogue1;
     public TextMeshProUGUI sonDialogue;
+    public TextMeshProUGUI doorText;
     public int dialougeIndex = 0;
     public float dialogueDelay = 1f;
     private Coroutine dialogueCoroutine;
@@ -30,13 +31,19 @@ public class door : MonoBehaviour
         mumDialogue.gameObject.SetActive(false);
         mumDialogue1.gameObject.SetActive(false);
         sonDialogue.gameObject.SetActive(false);
+        doorText.gameObject.SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && dialougeIndex==0)
         {
-            dialogueCoroutine = StartCoroutine(StartDialogueAfterDelay());
-            playermovement.StopMovement();
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                doorText.gameObject.SetActive(true);
+                dialogueCoroutine = StartCoroutine(StartDialogueAfterDelay());
+                playermovement.StopMovement();
+            }
+            
         }
     }
     IEnumerator StartDialogueAfterDelay()
