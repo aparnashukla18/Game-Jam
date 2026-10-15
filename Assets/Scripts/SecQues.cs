@@ -90,6 +90,7 @@ public class SecQues : MonoBehaviour
                 SecPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
                 consoleImage.gameObject.SetActive(true);
+
                 return;
             }
             ShowQuestion();
