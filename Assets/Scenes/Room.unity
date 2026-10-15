@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playermovement
   speed: 3
   animator: {fileID: 1381500223}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1381500220}
   movingHere: {fileID: 0}
 --- !u!95 &1381500223
 Animator:
@@ -2440,7 +2440,7 @@ Transform:
   m_GameObject: {fileID: 1476048382}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.2354, y: 0.9896, z: 0}
+  m_LocalPosition: {x: 13.17, y: 0.92, z: 0}
   m_LocalScale: {x: 2.431775, y: 3.9036858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3455,7 +3455,7 @@ Transform:
   m_GameObject: {fileID: 2103577600}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.893308, y: -0.38671142, z: 0}
+  m_LocalPosition: {x: -11.23, y: -0.37, z: 0}
   m_LocalScale: {x: 1.2668111, y: 0.24397792, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
