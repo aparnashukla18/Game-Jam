@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public class SecQues : MonoBehaviour
 {
@@ -85,12 +86,13 @@ public class SecQues : MonoBehaviour
             if(QuestionNumber >= Questions.Length)
             {
                 //feedbackText.gameObject.SetActive(false);
-                feedbackText.text = "All answer is correct! ";
+                feedbackText.text = "All answers are correct! ";
                 feedbackText.color = Color.green;
 
                 SecPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
-                level.SetActive(true);
+                SceneManager.LoadScene("AnimationSCene");
+                //level.SetActive(true);
                
 
                 return;
