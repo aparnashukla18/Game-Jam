@@ -14,7 +14,8 @@ public class SecQues : MonoBehaviour
     public TMP_Text feedbackText;
     public Button submitButton;
     public int QuestionNumber = 0;
-    public RawImage consoleImage;
+    public GameObject level;
+    
 
     private int correctAnswer = 7;
 
@@ -31,7 +32,7 @@ public class SecQues : MonoBehaviour
 
     void Start()
     {
-        consoleImage.gameObject.SetActive(false);
+        level.SetActive(false);
         SecPanel.SetActive(false);
         //PromptPanel.SetActive(false);
         //firstPanel.SetActive(false);
@@ -89,7 +90,8 @@ public class SecQues : MonoBehaviour
 
                 SecPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
-                consoleImage.gameObject.SetActive(true);
+                level.SetActive(true);
+               
 
                 return;
             }
