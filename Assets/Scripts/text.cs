@@ -4,7 +4,7 @@ using System.IO;
 
 public class text2 : MonoBehaviour
 {
-    public int xpoint = 12;
+    public int xpoint = 10;
     public RectTransform text1;
     public RectTransform text3;
     public RectTransform text4;
@@ -25,21 +25,21 @@ public class text2 : MonoBehaviour
         text3.anchoredPosition += movement;
         text4.anchoredPosition += movement;
 
-        if (text1.anchoredPosition.x > 12)
+        if (text1.anchoredPosition.x > 10)
         {
 
-            text1.anchoredPosition = new Vector2(-12, text1.anchoredPosition.y);
+            text1.anchoredPosition = new Vector2(-10, text1.anchoredPosition.y);
         }
 
-        if (text3.anchoredPosition.x > 12)
+        if (text3.anchoredPosition.x > 10)
         {
 
-            text3.anchoredPosition = new Vector2(-12, text3.anchoredPosition.y);
+            text3.anchoredPosition = new Vector2(-10, text3.anchoredPosition.y);
         }
-        if (text4.anchoredPosition.x > 12)
+        if (text4.anchoredPosition.x > 10)
         {
 
-            text4.anchoredPosition = new Vector2(-12, text3.anchoredPosition.y);
+            text4.anchoredPosition = new Vector2(-10, text3.anchoredPosition.y);
         }
 
 
