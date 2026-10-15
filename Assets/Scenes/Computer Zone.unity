@@ -2538,6 +2538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   QuestionPanel: {fileID: 1028991806}
   PromptPanel: {fileID: 946298276}
+  SecPanel: {fileID: 1648695318}
+  aiScript: {fileID: 1543632615}
   questionText: {fileID: 1829560655}
   answerInput: {fileID: 1268150166}
   feedbackText: {fileID: 778442141}
@@ -2572,6 +2574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   AIPanel: {fileID: 946298276}
   SecAssignment: {fileID: 1648695318}
+  firstPanel: {fileID: 1028991806}
 --- !u!114 &1543632616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,6 +2589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   SecPanel: {fileID: 1648695318}
   PromptPanel: {fileID: 946298276}
+  firstPanel: {fileID: 1028991806}
   questionText: {fileID: 644184529}
   answerInput: {fileID: 959280399}
   feedbackText: {fileID: 720099699}

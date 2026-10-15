@@ -8,6 +8,7 @@ public class SecQues : MonoBehaviour
 {
     public GameObject SecPanel;
     public GameObject PromptPanel;
+    public GameObject firstPanel;
     public TMP_Text questionText;
     public TMP_InputField answerInput;
     public TMP_Text feedbackText;
@@ -31,7 +32,9 @@ public class SecQues : MonoBehaviour
     void Start()
     {
         consoleImage.gameObject.SetActive(false);
-        SecPanel.SetActive(true);
+        SecPanel.SetActive(false);
+        //PromptPanel.SetActive(false);
+        //firstPanel.SetActive(false);
         ShowQuestion();
     }
 
@@ -104,6 +107,11 @@ public class SecQues : MonoBehaviour
     {
         feedbackText.text = "";
         
+    }
+    public void changePanel()
+    {
+        PromptPanel.SetActive(false);
+        SecPanel.SetActive(true);
     }
     
 

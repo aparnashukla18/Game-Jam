@@ -7,6 +7,8 @@ public class firstQues : MonoBehaviour
 {
     public GameObject QuestionPanel;
     public GameObject PromptPanel;
+    public GameObject SecPanel;
+    public AiScript aiScript;
     public TMP_Text questionText;
     public TMP_InputField answerInput;
     public TMP_Text feedbackText;
@@ -17,13 +19,16 @@ public class firstQues : MonoBehaviour
 
     void Start()
     {
+        QuestionPanel.SetActive(true);
         feedbackText.gameObject.SetActive(false);
         PromptPanel.SetActive(false);
+        SecPanel.SetActive(false);
     }
 
     public void CheckAnswer()
     {
         int playerAnswer;
+        
 
         if (!int.TryParse(answerInput.text, out playerAnswer))
         {
@@ -68,11 +73,14 @@ public class firstQues : MonoBehaviour
                 QuestionPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
                 PromptPanel.SetActive(true);
+
+                aiScript.openAi();
             }
 
         }
         else
         {
+            feedbackText.gameObject.SetActive(true);
             feedbackText.text = "Incorrect Answer";
             feedbackText.color = Color.red;
         }
