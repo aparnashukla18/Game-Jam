@@ -12,7 +12,7 @@ public class playermovement : MonoBehaviour
     private bool canMove = true;
     private Rigidbody rb;
     public SpriteRenderer spriteRenderer;
-    public GameObject movingHere;
+   // public GameObject movingHere;
     private void Start()
     {
         ismoving = false;
