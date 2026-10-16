@@ -9,12 +9,12 @@ public class health : MonoBehaviour
 
     private void Update()
     {
-        text.text = "Computer Virus files Downloding :- " + healthcount;
+        text.text = "Computer Virus files Downloding :- " + healthcount+ "%";
     }
 
 
     public void Health()
     {
-        text.text = "Computer Virus files Downloding :- " + healthcount;
+        text.text = "Computer Virus files Downloding :- " + healthcount + "%";
     }
 }

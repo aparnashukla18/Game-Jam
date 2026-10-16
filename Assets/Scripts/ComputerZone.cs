@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ComputerZone : MonoBehaviour
 {
-    public TextMeshProUGUI computerText;
+    public GameObject computerText;
     private bool playerInRange = false;
     void Start()
     {
@@ -44,7 +44,6 @@ public class ComputerZone : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-
             SceneManager.LoadScene(1);
         }
     }

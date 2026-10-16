@@ -25,8 +25,8 @@ public class error : MonoBehaviour
         if (collision.gameObject == Player)
         {
             //Debug.Log("error");
-            healthcount.healthcount++;
-            if (healthcount.healthcount == 3)
+            healthcount.healthcount+=33;
+            if (healthcount.healthcount <=99)
             {
                 SceneManager.LoadScene(2);
             }

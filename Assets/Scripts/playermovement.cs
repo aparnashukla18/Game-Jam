@@ -12,6 +12,9 @@ public class playermovement : MonoBehaviour
     private bool canMove = true;
     private Rigidbody rb;
     public SpriteRenderer spriteRenderer;
+
+    public GameObject mouseIndicator;
+    public GameObject spaceIndicator;
    // public GameObject movingHere;
     private void Start()
     {
@@ -36,7 +39,10 @@ public class playermovement : MonoBehaviour
         {
             ismoving = false;
             UpdateAnimation();
+            mouseIndicator.SetActive(false);
+            spaceIndicator.SetActive(true);
             return;
+            
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -63,16 +69,22 @@ public class playermovement : MonoBehaviour
             animator.SetFloat("Speed", 1f);
         }
 
+        if (canMove)
+        {
+            mouseIndicator.SetActive(true);
+            spaceIndicator.SetActive(false);
+            return;
+        }
 
-        if(ismoving)
+        if (ismoving)
         {
             if (targetposition .x < transform.position.x)
             {
-                transform.localScale = new Vector3(-1.5f, 1.5f,1.5f);
+                transform.localScale = new Vector3(-3f, 3f, 3f);
             }
             else if ( targetposition.x > transform.position.x)
             {
-                transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                transform.localScale = new Vector3(3, 3, 3f);
             }
         }
 
@@ -94,6 +106,8 @@ public class playermovement : MonoBehaviour
     {
         canMove = true;
         UpdateAnimation();
+        mouseIndicator.SetActive(true);
+        spaceIndicator.SetActive(false);
     }
 
 

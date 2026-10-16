@@ -85,13 +85,11 @@ public class SecQues : MonoBehaviour
             
             if(QuestionNumber >= Questions.Length)
             {
-                //feedbackText.gameObject.SetActive(false);
                 feedbackText.text = "All answers are correct! ";
                 feedbackText.color = Color.green;
 
                 SecPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
-                //SceneManager.LoadScene("AnimationSCene");
                 level.SetActive(true);
 
 

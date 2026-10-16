@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    public GameObject levelPanel;
+    public GameObject pcView;
     void Start()
     {
-        levelPanel.SetActive(true);
+        pcView.SetActive(true);
     }
 
   

@@ -5,12 +5,12 @@ using System.Security.Cryptography;
 
 public class door : MonoBehaviour
 {
-    public TextMeshProUGUI doorInteraction;
-    public TextMeshProUGUI dialogue3;
-    public TextMeshProUGUI dialogue4;
-    public TextMeshProUGUI mumDialogue;
-    public TextMeshProUGUI mumDialogue1;
-    public TextMeshProUGUI sonDialogue;
+    public GameObject doorInteraction;
+    public GameObject dialogue3;
+    public GameObject dialogue4;
+    public GameObject mumDialogue;
+    public GameObject mumDialogue1;
+    public GameObject sonDialogue;
     public int dialougeIndex = 0;
     public float dialogueDelay = 1f;
     private Coroutine dialogueCoroutine;
@@ -19,6 +19,7 @@ public class door : MonoBehaviour
     public ComputerZone computerScript;
     private bool playerInRange = false;
     private bool dialogueStarted = false;
+    //public GameObject DoorImg;
 
     void Awake()
     {
@@ -32,6 +33,7 @@ public class door : MonoBehaviour
     void HideAllDialogue()
     {
         doorInteraction.gameObject.SetActive(false);
+        //DoorImg.gameObject.SetActive(false);
         dialogue3.gameObject.SetActive(false);
         dialogue4.gameObject.SetActive(false);
         mumDialogue.gameObject.SetActive(false);
@@ -41,6 +43,8 @@ public class door : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        doorInteraction.gameObject.SetActive(true);
+        //DoorImg.gameObject.SetActive(true);
         if (other.CompareTag("Player") && dialougeIndex==0)
         {
             playerInRange = true;
@@ -65,9 +69,10 @@ public class door : MonoBehaviour
             dialogueStarted = true;
 
             doorInteraction.gameObject.SetActive(false);
-            
+            //DoorImg.gameObject.SetActive(false);
 
-            
+
+
             playermovement.StopMovement();
             Debug.Log("Dialogue index is 0");
 
@@ -81,8 +86,10 @@ public class door : MonoBehaviour
         IEnumerator StartDialogueAfterDelay()
         {
             yield return new WaitForSeconds(dialogueDelay);
-            doorInteraction.gameObject.SetActive(true);
-            dialougeIndex = 1;
+            doorInteraction.gameObject.SetActive(false);
+            //DoorImg.gameObject.SetActive(false);
+            dialogue3.gameObject.SetActive(true);
+            dialougeIndex = 2;
             playermovement.StopMovement();
 
             dialogueCoroutine = null;
@@ -93,48 +100,52 @@ public class door : MonoBehaviour
     }
     void NextDialogue()
     {
-        if (dialougeIndex == 1)
+        if (dialougeIndex == 2)
         {
             doorInteraction.gameObject.SetActive(false);
-            dialogue3.gameObject.SetActive(true);
-            dialougeIndex = 2;
-            Debug.Log("Dialogue Index is 2 now");
-
-        }
-        else if (dialougeIndex == 2)
-        {
+            //DoorImg.gameObject.SetActive(false);
             dialogue3.gameObject.SetActive(false);
             dialogue4.gameObject.SetActive(true);
             dialougeIndex = 3;
+            Debug.Log("Dialogue Index is 2 now");
 
         }
-        else if (dialougeIndex == 3) //&&  !mumDialogueShown)
+        else if (dialougeIndex == 3)
         {
             dialogue4.gameObject.SetActive(false);
             mumDialogue.gameObject.SetActive(true);
             dialougeIndex = 4;
 
         }
-        else if (dialougeIndex == 4) //&& mumDialogueShown)
+        else if (dialougeIndex == 4) //&&  !mumDialogueShown)
         {
             mumDialogue.gameObject.SetActive(false);
             mumDialogue1.gameObject.SetActive(true);
-            mumDialogueShown = true;
             dialougeIndex = 5;
 
         }
-        else if (dialougeIndex == 5)
+        else if (dialougeIndex == 5) //&& mumDialogueShown)
         {
             mumDialogue1.gameObject.SetActive(false);
             sonDialogue.gameObject.SetActive(true);
+            mumDialogueShown = true;
             dialougeIndex = 6;
+
         }
         else if (dialougeIndex == 6)
         {
             sonDialogue.gameObject.SetActive(false);
+            
             dialougeIndex = 7;
+
             playermovement.ResumeMovement();
         }
+        //else if (dialougeIndex == 6)
+        //{
+        //    sonDialogue.gameObject.SetActive(false);
+        //    dialougeIndex = 7;
+        //    playermovement.ResumeMovement();
+        //}
     }
     void OnTriggerExit2D(Collider2D other)
     {

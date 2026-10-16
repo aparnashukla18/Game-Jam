@@ -7,19 +7,41 @@ public class AiScript : MonoBehaviour
     public GameObject firstPanel;
     void Start()
     {
-        AIPanel.SetActive(false);
-        SecAssignment.SetActive(false);
-       // firstPanel.SetActive(false);
+        if (AIPanel != null)
+        {
+           AIPanel.SetActive(false);
+        }
+        if (SecAssignment != null)
+        {
+            SecAssignment.SetActive(false);
+        }
     }
     public void openAi()
     {
-        AIPanel.SetActive(true);
+        if(AIPanel  != null)
+        {
+            AIPanel.SetActive(true);
+        }
     }
     public void ChangePanel()
     {
-        AIPanel.SetActive(false);
-        //firstPanel.SetActive(false);
-       SecAssignment.SetActive(true);
+        if(AIPanel !=null)
+        {
+            AIPanel.SetActive(false);
+        }
+        if(firstPanel != null)
+        {
+            firstPanel.SetActive(false);
+        }
+        if(SecAssignment != null)
+        {
+            SecAssignment.SetActive(true);
+            Debug.Log("Sec Panel open ho gya");
+        }
+        else
+        {
+            Debug.Log("Nhiii Assign hai");
+        }
 
     }
 

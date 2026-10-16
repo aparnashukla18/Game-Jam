@@ -1,16 +1,7 @@
 fileFormatVersion: 2
 guid: 6564556fd50e7564ba7c49dba185f6a8
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6193931378863008526
-    second: conversation box_0
-  - first:
-      213: -1737131350105451821
-    second: conversation box_1
-  - first:
-      213: -5120633709945339919
-    second: conversation box_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +54,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 2
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -122,20 +113,20 @@ TextureImporter:
       name: conversation box_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 31
-        width: 92
-        height: 56
+        x: 42
+        y: 32
+        width: 90
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 17, z: 9, w: 9}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e0b6640b5c345f550800000000000000
-      internalID: 6193931378863008526
+      spriteID: 9a3b594c1c24e0f40b9d9544f028ff88
+      internalID: -693360408
       vertices: []
       indices: 
       edges: []
@@ -144,20 +135,20 @@ TextureImporter:
       name: conversation box_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 31
-        width: 161
-        height: 56
+        x: 161
+        y: 32
+        width: 159
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 22, z: 15, w: 6}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3d215c4ad3874e7e0800000000000000
-      internalID: -1737131350105451821
+      spriteID: d20b9d859ebbf0b4a93b28399dec70bb
+      internalID: -516024806
       vertices: []
       indices: 
       edges: []
@@ -166,20 +157,20 @@ TextureImporter:
       name: conversation box_2
       rect:
         serializedVersion: 2
-        x: 360
-        y: 43
-        width: 93
-        height: 32
+        x: 361
+        y: 44
+        width: 91
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 9, w: 4}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1ff31d565cadfe8b0800000000000000
-      internalID: -5120633709945339919
+      spriteID: d431c5ad1bb7cba4e9cad81f697eb7eb
+      internalID: -87141786
       vertices: []
       indices: 
       edges: []
@@ -188,7 +179,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9c6ccabff1acd3e47a410724b7da66f8
     internalID: 0
     vertices: []
     indices: 
@@ -196,11 +187,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: True
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      conversation box_0: 6193931378863008526
-      conversation box_1: -1737131350105451821
-      conversation box_2: -5120633709945339919
+      conversation box_0: -693360408
+      conversation box_1: -516024806
+      conversation box_2: -87141786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
