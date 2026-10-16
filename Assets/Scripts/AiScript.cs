@@ -5,6 +5,7 @@ public class AiScript : MonoBehaviour
     public GameObject AIPanel;
     public GameObject SecAssignment;
     public GameObject firstPanel;
+    public GameObject tryPanel;
     void Start()
     {
         if (AIPanel != null)
@@ -32,6 +33,10 @@ public class AiScript : MonoBehaviour
         if(firstPanel != null)
         {
             firstPanel.SetActive(false);
+        }
+        if(tryPanel != null)
+        {
+            tryPanel.SetActive(false);
         }
         if(SecAssignment != null)
         {

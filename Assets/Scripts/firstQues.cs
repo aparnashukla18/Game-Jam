@@ -8,6 +8,7 @@ public class firstQues : MonoBehaviour
     public GameObject QuestionPanel;
     public GameObject PromptPanel;
     public GameObject SecPanel;
+    public GameObject tryPanel;
     public AiScript aiScript;
     public TMP_Text questionText;
     public TMP_InputField answerInput;
@@ -23,6 +24,7 @@ public class firstQues : MonoBehaviour
         feedbackText.gameObject.SetActive(false);
         PromptPanel.SetActive(false);
         SecPanel.SetActive(false);
+        tryPanel.SetActive(false);
     }
 
     public void CheckAnswer()
@@ -70,6 +72,7 @@ public class firstQues : MonoBehaviour
 
 
                 feedbackText.gameObject.SetActive(false);
+                tryPanel.SetActive(false);
                 QuestionPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
                 PromptPanel.SetActive(true);

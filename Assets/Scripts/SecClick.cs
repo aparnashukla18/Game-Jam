@@ -3,7 +3,7 @@ using UnityEngine;
 public class SecClick : MonoBehaviour
 {
     public GameObject sumbitButton;
-    public GameObject levels;
+    public GameObject tryPanel;
     public GameObject SecPanel;
     void Start()
     {
@@ -14,7 +14,7 @@ public class SecClick : MonoBehaviour
     public void SecOnClick()
     {
         SecPanel.SetActive(false);
-        levels.SetActive(true);
+        tryPanel.SetActive(true);
 
     }
 }
