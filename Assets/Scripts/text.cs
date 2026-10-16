@@ -15,7 +15,7 @@ public class text2 : MonoBehaviour
 
     void Start()
     {
-        movement = new Vector2(0.003f, 0.00002f);// horizontalspeed, upspeed);
+        movement = new Vector2(0.003f, 0.02f);// horizontalspeed, upspeed);
     }
     void Update()
     {
