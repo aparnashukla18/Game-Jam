@@ -91,9 +91,9 @@ public class SecQues : MonoBehaviour
 
                 SecPanel.SetActive(false);
                 submitButton.gameObject.SetActive(false);
-                SceneManager.LoadScene("AnimationSCene");
-                //level.SetActive(true);
-               
+                //SceneManager.LoadScene("AnimationSCene");
+                level.SetActive(true);
+
 
                 return;
             }

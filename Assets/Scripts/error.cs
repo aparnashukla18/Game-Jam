@@ -24,7 +24,7 @@ public class error : MonoBehaviour
         Debug.Log("error");
         if (collision.gameObject == Player)
         {
-            Debug.Log("error");
+            //Debug.Log("error");
             healthcount.healthcount++;
             if (healthcount.healthcount == 3)
             {
